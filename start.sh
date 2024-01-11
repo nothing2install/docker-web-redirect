@@ -29,6 +29,7 @@ cat <<EOF > /etc/nginx/conf.d/default.conf
 server {
 	listen ${LISTEN};
 
+	add_header Access-Control-Allow-Origin *;
 	rewrite ^/(.*)\$ ${REDIRECT_TARGET}\$1 ${REDIRECT_TYPE};
 }
 EOF
